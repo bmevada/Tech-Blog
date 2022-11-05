@@ -3,10 +3,10 @@ const Blog = require('./Blog');
 const Comment = require('./Comment');
 
 // Username for the blogs posted by the user
-User.hasMany(Blog, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-});
+// User.hasMany(Blog, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE',
+// });
 
 // Username for the posted blog
 Blog.belongsTo(User, {
@@ -22,16 +22,16 @@ Comment.belongsTo(User, {
 
 
 // Comment added to the blog id
-Comment.belongsTo(Blog, {
-    foreignKey: 'blog_id',
-    onDelete: 'CASCADE',
-});
+// Comment.belongsTo(Blog, {
+//     foreignKey: 'blog_id',
+//     onDelete: 'CASCADE',
+// });
 
 // Username for multiple comments by the user
-User.hasMany(Comment, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-});
+// User.hasMany(Comment, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE',
+// });
 
 // Multiple comments addded to the blog id
 Blog.hasMany(Comment, {
