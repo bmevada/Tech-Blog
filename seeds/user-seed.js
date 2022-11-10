@@ -2,7 +2,6 @@ const { User } =require ('../models');
 const userData = [
     {
         username: " ",
-        github: " ",
         email: " ",
         password: " "
     },
