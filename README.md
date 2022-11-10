@@ -14,6 +14,14 @@ I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 
+## Links to deployed application
+
+[Link to deployed working application] - to be added
+
+[Link to Github] https://github.com/bmevada/Tech-Blog.git
+
+
+
 ## Acceptance Criteria
 
 ```md
@@ -57,6 +65,26 @@ THEN the user is able to view comments but the user is prompted to log in again 
 The following animation demonstrates the application functionality:
 
 ![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
+
+## Deployed Application
+
+ - Landing page- user presented with the following deployed homepage
+
+
+ - User sign-in page  - user is prompted to enter username and password
+
+
+ - User sign-up page - User to create new login with username and password
+
+
+ - Dashboard (view users exisitng blogs)
+
+ - Add new blog
+
+ - Add new comment
+
+ - Idle Page
+
 
 ## Development Technologies Used
 - bcrypt - used to hash passwords
