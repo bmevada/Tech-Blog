@@ -1,4 +1,5 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# Tech Blog Application
+Week 14: Model-View-Controller (MVC) Challenge
 
 ## Tech Blog Application
 
@@ -60,7 +61,7 @@ WHEN the user is idle on the site for more than a set time
 THEN the user is able to view comments but the user is prompted to log in again before the user can add, update, or delete comments
 ```
 
-## Mock-Up
+## Mock-Up of the functional deployed page
 
 The following animation demonstrates the application functionality:
 
