@@ -21,12 +21,12 @@ router.get('/', async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'github'],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ['username', 'github'],
+          attributes: ['username'],
         },
       ],
     });
@@ -84,12 +84,12 @@ router.get('/blogs/:id', async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'twitter'],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ['username', 'twitter'],
+          attributes: ['username'],
         },
       ],
     });
