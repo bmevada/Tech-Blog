@@ -19,6 +19,6 @@ async function newFormHandler(event){
     }else{
         alert(response.statusText)
     }
-}
+
 
 document.querySelector('.new-blog-form').addEventListener('submit',newFormHandler);
