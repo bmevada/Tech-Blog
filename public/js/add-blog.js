@@ -20,5 +20,5 @@ async function newFormHandler(event) {
         alert(response.statusText)
     };
 
-
-    document.querySelector('.new-blog-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-blog-form').addEventListener('submit', newFormHandler);
+}
