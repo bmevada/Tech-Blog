@@ -18,8 +18,7 @@ async function newFormHandler(event) {
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText)
-    }
+    };
 
 
-    document.querySelector('.new-blog-form').addEventListener('submit', newFormHandler)
-    
+    document.querySelector('.new-blog-form').addEventListener('submit', newFormHandler);
