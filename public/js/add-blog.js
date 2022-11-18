@@ -1,10 +1,10 @@
-async function newFormHandler(event){
+async function newFormHandler(event) {
     event.preventDefault();
 
-    const title =document.querySelector('input[name ="blog-title"]').value;
+    const title = document.querySelector('input[name ="blog-title"]').value;
     const content = document.querySelector('textarea[name="blog-content"]').value;
 
-    const response = await fetch(`/api/blogs`,{
+    const response = await fetch(`/api/blogs`, {
         method: 'POST',
         body: JSON.stringify({
             title,
@@ -14,11 +14,11 @@ async function newFormHandler(event){
             'Content-Type': 'application/json'
         }
     })
-    if(response.ok) {
+    if (response.ok) {
         document.location.replace('/dashboard');
-    }else{
+    } else {
         alert(response.statusText)
     }
 
 
-document.querySelector('.new-blog-form').addEventListener('submit',newFormHandler);
+    document.querySelector('.new-blog-form').addEventListener('submit', newFormHandler);

@@ -1,4 +1,4 @@
-async function editFormHandler(event){
+async function editFormHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="blog-title"]').value;
@@ -15,9 +15,9 @@ async function editFormHandler(event){
             'Content-Type': 'application/json'
         }
     });
-    if (response.ok){
+    if (response.ok) {
         document.location.replace('/dashboard/');
-    }else {
+    } else {
         alert(response.statusText);
     }
 
