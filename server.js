@@ -17,12 +17,13 @@ const hbs = exphbs.create({ helpers });
 
 // Add expiration to the session
 const sess = {
-  session: '',
+  secret: 'Super secret secret',
+  // session: '',
   cookie: {
-    expire: 20 * 60 * 1000
+    // expire: 20 * 60 * 1000
   },
-  resave: true,
-  rolling: true,
+  resave: false,
+  // rolling: true,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
@@ -41,6 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: true}).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
