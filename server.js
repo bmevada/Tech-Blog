@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 // integrate Handlebars.js with helpers
 const hbs = exphbs.create({ helpers });
 
+// Add expiration to the session
 const sess = {
   session: '',
   cookie: {
