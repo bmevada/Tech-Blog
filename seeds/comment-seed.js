@@ -1,9 +1,9 @@
 const { Comment } =require ('../models');
 const commentData = [
     {
-        user_id: " ",
-        blog_id: " ",
-        comment_text: " "
+        user_id: 1,
+        blog_id: 1,
+        comment_text: "Lorem ipsum dolor sit amet."
     },
 
 ]
