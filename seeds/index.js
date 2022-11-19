@@ -1,6 +1,8 @@
+// Seed all users, blogs and comments
 const seedBlogs = require('./blog-seed');
 const seedComments = require('./comment-seed');
 const seedUsers = require('./user-seed');
+
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
