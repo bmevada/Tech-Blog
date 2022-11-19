@@ -1,9 +1,9 @@
 const { User } =require ('../models');
 const userData = [
     {
-        username: " ",
-        email: " ",
-        password: " "
+        username: "Bhavika",
+        email: "mevada87@gmail.com",
+        password: "cookies"
     },
 ]
 
