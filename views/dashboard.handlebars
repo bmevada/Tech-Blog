@@ -1,7 +1,7 @@
-{{!-- Header  with anchor tab- href to dashboard
+{{!-- Header with anchor tab- href to dashboard
 add links - home, dashboard, and logout.
 new blog
-Footer -  --}}
+Footer - --}}
 
 {{!-- Mainly copy from main --}}
 
@@ -20,6 +20,16 @@ Footer -  --}}
 {{/each}}
 
 {{else}}
-<h6 class ='text center font-italic pb-4'> There are no Blogs</h6>
+<h6 class='text center font-italic pb-4'> There are no Blogs</h6>
 
 {{/if}}
+
+
+<!-- Render login links -->
+{{#if logged_in}}
+<a href="/profile">profile</a> |
+<button class="no-button" id="logout">logout</button>
+{{else}}
+<a href="/login">login</a>
+{{/if}}
+</nav>
