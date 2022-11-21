@@ -17,7 +17,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Links to deployed application
 
-[Link to deployed working application] - to be added
+[Link to deployed working application] https://git.heroku.com/bhavika-techblog.git
 
 [Link to Github] https://github.com/bmevada/Tech-Blog.git
 
