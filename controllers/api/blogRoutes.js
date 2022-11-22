@@ -78,7 +78,7 @@ router.post('/', withAuth, async (req, res) => {
     try {
         const newBlog = await Blog.create({
             title: req.body.title,
-            content: req.body.content,
+            body: req.body.body,
             user_id: req.session.user_id
         });
 

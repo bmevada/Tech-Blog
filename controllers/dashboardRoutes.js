@@ -1,42 +1,43 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Blog, Comment} = require('../models');
+const { Blog, Comment, User} = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET ALL blogs and ALL comments
 router.get('/', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findAll({
-            where: {
-                // use the ID from the session
-                user_id: req.session.user_id,
-            },
-            attributes: ['id', 'title', 'content', 'date_created'],
-            include: [
-                {
-                    model: Comment,
-                    attributes: [
-                        'id',
-                        'comment_text',
-                        'blog_id',
-                        'user_id',
-                        'date_created'
-                    ],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-            ],
+            include: [User]
+            // where: {
+            //     // use the ID from the session
+            //     user_id: req.session.user_id,
+            // },
+            // attributes: ['id', 'title', 'content', 'date_created'],
+            // include: [
+                // {
+                //     model: Comment,
+                //     attributes: [
+                //         'id',
+                //         'comment_text',
+                //         'blog_id',
+                //         'user_id',
+                //         'date_created'
+                //     ],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username']
+                //     }
+                // },
+            //     {
+            //         model: User,
+            //         attributes: ['username']
+            //     },
+            // ],
         });
 
         // Serialize data in array
         const blogs = blogData.map(blog => blog.get({ plain: true }));
-
+        console.log (blogs)
         // Pass serialized data
         res.render('dashboard', {
             blogs,
