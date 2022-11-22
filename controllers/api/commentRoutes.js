@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Blog, Comment } = require('../../models/Index');
 const withAuth = require('../../utils/auth');
 
 // GET ALL comments
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-// Check user id from session
+// POST new comment
 router.post('/', withAuth, async (req, res) => {
     try {
         console.log('HERE')

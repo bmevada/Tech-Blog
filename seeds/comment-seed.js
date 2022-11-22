@@ -1,4 +1,4 @@
-const { Comment } =require ('../models');
+const { Comment } =require ('../models/Index');
 const commentData = [
     {
         user_id: 1,

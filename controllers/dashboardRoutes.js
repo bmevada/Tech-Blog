@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Blog, Comment, User} = require('../models');
+const { Blog, Comment, User} = require('../models/Index');
 const withAuth = require('../utils/auth');
 
 // GET ALL blogs and ALL comments
@@ -10,7 +10,7 @@ router.get('/', withAuth, async (req, res) => {
             include: [User]
             // where: {
             //     // use the ID from the session
-            //     user_id: req.session.user_id,
+            //     user_id: req.session.user,
             // },
             // attributes: ['id', 'title', 'content', 'date_created'],
             // include: [
@@ -100,16 +100,16 @@ router.get('/create/', withAuth, async (req, res) => {
                 // Read user id from session
                 user_id: req.session.user_id,
             },
-            attributes: ['id', 'title', 'date_created', 'content'],
+            // attributes: ['id', 'title', 'date_created', 'content'],
             include: [
                 {
                     model: Comment,
                     attributes: [
-                        'id',
-                        'comment_text',
-                        'blog_id',
-                        'user_id',
-                        'date_created',
+                        // 'id',
+                        // 'comment_text',
+                        // 'blog_id',
+                        // 'user_id',
+                        // 'date_created',
                     ],
                     include: {
                         model: User,
@@ -123,7 +123,7 @@ router.get('/create/', withAuth, async (req, res) => {
             ],
         });
         const blogs = blogData.map(blog => blog.get({ plain: true }));
-        res.render('create-blog', {
+        res.render('add-new-blog', {
             blogs,
             loggedIn: true
         });
