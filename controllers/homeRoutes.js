@@ -45,11 +45,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-// User login
+// User login - then redirect to dashboard
 router.get('/login', (req, res) => {
   console.log(req.session);
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
   res.render('login');
@@ -58,7 +58,7 @@ router.get('/login', (req, res) => {
 // User signup
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
   res.render('signup');
