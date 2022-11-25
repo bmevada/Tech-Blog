@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-//Create a user modeal - username and password
+//Create a user model - username and password
 class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
@@ -58,7 +58,7 @@ User.init(
         // Use underscore insttead of camel casing
         underscored: true,
         // Ensure the model remains in lower case
-        modelName: 'user',
+        modelName: 'User',
     }
 );
 

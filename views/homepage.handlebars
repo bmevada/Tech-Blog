@@ -1,8 +1,10 @@
 {{!-- When the user logs in, the user is able to see all blogs --}}
 {{!-- If there are no blogs - the dashboard will tell the user that there are no blogs --}}
 {{#each blogs as |blog| }}
-{{>blog-info blog}}
+{{!-- {{>blog-info blog}} --}}
+{{>card}}
 </div>
 {{else}}
 <h6 class='pb-5 text center font-italic'>There are currently no blogs</h6>
 {{/each}}
+

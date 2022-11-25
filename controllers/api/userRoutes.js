@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // GET ALL users
 
-router.get('/', async (req, res) => {
+router.get('/findall', async (req, res) => {
     try {
         const userData = await User.findAll({
             attributes: { exclude: ['password'] },
@@ -49,12 +49,12 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// SIGNUP - user adds username, email and password
+// SIGNUP - user adds username and password
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create({
             username: req.body.username,
-            email: req.body.email,
+            // email: req.body.email,
             password: req.body.password,
     
         });
@@ -76,14 +76,14 @@ router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
-                email: req.body.email,
+                username: req.body.username,
             },
         });
         // if incorrect password is entered
         if (!userData) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect password, please try again' });
             return;
         }
 
@@ -92,7 +92,7 @@ router.post('/login', async (req, res) => {
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect password, please try again' });
             return;
         }
 
